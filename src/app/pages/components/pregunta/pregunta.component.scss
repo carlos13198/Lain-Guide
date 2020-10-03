@@ -1,0 +1,252 @@
+@import "../../../../styles/responsive-mixin.scss";
+* {
+  font-family: "Montserrat";
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.hero {
+  width: 100vw;
+  height: 100vh;
+  #containerModal {
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background-color: #35323257;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    display: none;
+    .wraperModal {
+      background-color: white;
+      width: 90%;
+      height: fit-content;
+      margin-top: 2em;
+      border-radius: 10px;
+      padding: 1em;
+      box-sizing: border-box;
+      .headerModal {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+.grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  // .leftbutton {
+  //   display: flex;
+  //   .arrow-left {
+  //     width: 0;
+  //     height: 0;
+  //     border-top: 2.5rem solid transparent;
+  //     border-bottom: 2.5rem solid transparent;
+  //     border-right: 5rem solid #ff8e7b;
+  //   }
+  // }
+  
+  @include screen("tablet-l") {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto auto 2fr;
+    row-gap: 3rem;
+  }
+  @include screen("phone") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto 1fr;
+    row-gap: 1.5rem;
+  }
+  .status {
+    grid-column: 3/4;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    
+    @include screen("tablet-l") {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    @include screen("phone") {
+      grid-column: 2/3;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    p {
+      margin: unset;
+    }
+  }
+  .card {
+    text-align: center;
+    font-size: 18px;
+    background: #99ddc6;
+    height: 60%;
+    width: 70%;
+    border-radius: 1em;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-self: end;
+    align-self: center;
+    
+    @include screen("tablet-l") {
+      width: 85%;
+      height: 95%;
+    }
+    @include screen("phone") {
+      width: 70%;
+      height: 70%;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      justify-self: center;
+    }
+    img {
+      width: 30%;
+      @include screen("phone") {
+        width: 40%;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: unset;
+      margin-top: 1rem;
+      color: white;
+      @include screen("phone") {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .pregunta {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 60%;
+    height: 10rem;
+    display: grid;
+    border: #707070 solid 1px;
+    justify-self: end;
+    align-self: center;
+    border-radius: 1rem;
+    
+    @include screen("tablet-l") {
+      grid-column: 2/4;
+      width: 80%;
+      justify-self: center;
+    }
+    @include screen("phone") {
+      grid-column: 1/3;
+      grid-row: 2/3;
+      justify-self: center;
+      width: 85%;
+      height: 7rem;
+    }
+    p {
+      margin: unset;
+      font-size: 4rem;
+      place-self: center;
+      @include screen("phone") {
+        font-size: 3rem;
+      }
+    }
+  }
+  > img {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    justify-self: end;
+    width: 15rem;
+    
+    @include screen("tablet-l") {
+      grid-column: 1/2;
+      grid-row: 3/5;
+      width: 70%;
+      align-self: center;
+    }
+    @include screen("phone") {
+      grid-column: 1/2;
+      grid-row: 4/5;
+      width: 60%;
+      justify-self: center;
+    }
+  }
+  .containerRespuesta {
+    grid-column: 2/3;
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+    
+    @include screen("tablet-l") {
+      grid-column: 2/4;
+      justify-content: center;
+      margin-left: 0;
+    }
+    @include screen("phone") {
+      grid-column: 1/3;
+      margin-left: 0;
+    }
+    p {
+      font-size: 2rem;
+      @include screen("tablet-l") {
+        text-align: center;
+      }
+    }
+    input {
+      width: 60%;
+      height: 6rem;
+      align-self: center;
+      border: #707070 solid 1px;
+      text-align: center;
+      font-size: 3rem;
+      border-radius: 1rem;
+      
+      @include screen("tablet-l") {
+        width: 70%;
+      }
+      @include screen("phone") {
+        width: 70%;
+      }
+    }
+  }
+  .rightbutton {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+    
+    @include screen("tablet-l") {
+      grid-column: 3/4;
+      grid-row: 4/5;
+    }
+    @include screen("phone") {
+      grid-column: 2/3;
+      margin-top: unset;
+      justify-self: center;
+    }
+    .arrow-right {
+      width: 0;
+      height: 0;
+      border-top: 2.5rem solid transparent;
+      border-bottom: 2.5rem solid transparent;
+      border-left: 5rem solid #ff8e7b;
+      @include screen("phone") {
+        border-top: 1.5rem solid transparent;
+        border-bottom: 1.5rem solid transparent;
+        border-left: 3rem solid #ff8e7b;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      margin: unset;
+      margin-top: 1rem;
+      @include screen("phone") {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

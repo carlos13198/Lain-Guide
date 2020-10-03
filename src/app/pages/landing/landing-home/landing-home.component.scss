@@ -1,0 +1,318 @@
+@import "../../../../styles/responsive-mixin.scss";
+* {
+  font-family: "Montserrat";
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-principal {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5em 11em 3em 10em;
+  background: url(../../../../assets/bg1920.svg);
+  background-size: cover;
+  background-color: white;
+  background-position-y: 58%;
+  background-repeat: no-repeat;
+  @include screen("desktop") {
+    padding: 5em 4em 2em 7em;
+  }
+  @include screen("tablet-l") {
+    background: url(../../../../assets/bgtablet.svg);
+    background-size: cover;
+    background-position: 29% 241%;
+    background-repeat: no-repeat;
+    padding: 6em 4em 3em 8em;
+  }
+  @include screen("phone") {
+    padding: unset;
+    background: url(../../../../assets/bgphone.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1em;
+    padding-top: 3em;
+  }
+  // @include screen('desktop') {
+  //     padding: 5em 4em 2em 7em;
+  // }
+  // @include screen('tablet-l') {
+  //     padding: 6em 4em 3em 8em;
+  // }
+  // @include screen('phone') {
+  //     padding: 1em;
+  //     padding-top: 3em;
+  //     padding-right: 2em;
+  // }
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 40px;
+  @include screen("desktop") {
+    row-gap: 20px;
+  }
+  @include screen("tablet-l") {
+    row-gap: 30px;
+  }
+  @include screen("phone") {
+    row-gap: 25px;
+  }
+  //   > img:first-child {
+  //     z-index: -1;
+  //     height: 155vh;
+  //     position: absolute;
+  //     box-sizing: border-box;
+  //     left: -24em;
+  //     top: -17em;
+  //     @include screen("desktop") {
+  //       height: 135vh;
+  //       left: -17em;
+  //       top: -12em;
+  //     }
+  //     @include screen("tablet-l") {
+  //       display: none;
+  //     }
+  //   }
+  //   > img:nth-child(2) {
+  //     display: none;
+  //     @include screen("tablet-l") {
+  //       display: block;
+  //       z-index: -1;
+  //       width: 140vw;
+  //       position: absolute;
+  //       box-sizing: border-box;
+  //       bottom: -19em;
+  //       left: -13em;
+  //     }
+  //     @include screen("phone") {
+  //       display: none;
+  //     }
+  //   }
+  //   > img:nth-child(3) {
+  //     display: none;
+  //     @include screen("phone") {
+  //       display: block;
+  //       z-index: -1;
+  //       width: 140vw;
+  //       position: absolute;
+  //       box-sizing: border-box;
+  //       bottom: -11em;
+  //       left: -6em;
+  //     }
+  //   }
+}
+
+.iniciar-container {
+  display: grid;
+  a {
+    justify-self: end;
+  }
+}
+
+.iniciarButton {
+  cursor: pointer;
+  height: 100px;
+  width: 330px;
+  background-color: #99ddc6;
+  color: white;
+  border-radius: 1em;
+  justify-self: end;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: grid;
+  @include screen("desktop") {
+    height: 75px;
+    width: 265px;
+  }
+  @include screen("phone") {
+    height: 45px;
+    width: 160px;
+  }
+  p {
+    margin: unset;
+    font-weight: 500;
+    font-size: 2em;
+    place-self: center;
+    @include screen("desktop") {
+      font-size: 1.5em;
+    }
+    @include screen("phone") {
+      font-size: 0.9em;
+    }
+  }
+}
+
+.presentacion {
+  width: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  row-gap: 30px;
+  column-gap: 20px;
+  @include screen("desktop") {
+    row-gap: 10px;
+    column-gap: 15px;
+  }
+  @include screen("tablet-l") {
+    row-gap: 40px;
+    grid-row: 2/3;
+  }
+  @include screen("phone") {
+    row-gap: 40px;
+    column-gap: 10px;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr auto auto 1fr;
+  }
+  img {
+    @include screen("desktop") {
+      width: 100px;
+    }
+    @include screen("phone") {
+      width: 50px;
+      grid-column: 2 / 3;
+    }
+  }
+  h1 {
+    font-size: 5em;
+    font-weight: 900;
+    margin: unset;
+    color: #4d4962;
+    @include screen("desktop") {
+      font-size: 4em;
+    }
+    @include screen("phone") {
+      justify-self: center;
+      grid-column: 3/4;
+      font-size: 2em;
+    }
+  }
+  p {
+    margin: unset;
+    font-size: 3.5em;
+    font-weight: 500;
+    grid-column-end: span 2;
+    color: #4d4962;
+    @include screen("desktop") {
+      font-size: 2.5em;
+    }
+    @include screen("phone") {
+      text-align: center;
+      grid-column-end: span 4;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.registrarButton {
+  cursor: pointer;
+  width: 400px;
+  height: 100px;
+  background-color: #ffcb78;
+  border-radius: 1em;
+  color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: grid;
+  justify-self: center;
+  @include screen("desktop") {
+    height: 80px;
+    width: 320px;
+  }
+  @include screen("tablet-l") {
+    // grid-column: column1-start/span 2;
+    // grid-row-start: row1-start;
+    justify-self: start;
+  }
+  @include screen("phone") {
+    justify-self: center;
+    margin-top: 2em;
+    width: 185px;
+    height: 60px;
+  }
+  p:first-child {
+    margin: unset;
+    font-weight: 500;
+    font-size: 2em;
+    place-self: center;
+    @include screen("desktop") {
+      font-size: 1.5em;
+    }
+    @include screen("phone") {
+      display: none;
+    }
+  }
+  p:last-child {
+    display: none;
+    @include screen("phone") {
+      margin: unset;
+      font-weight: 500;
+      font-size: 1.3em;
+      place-self: center;
+      display: block;
+    }
+  }
+}
+
+.registrarContainer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  height: 320px;
+  @include screen("desktop") {
+    height: 275px;
+  }
+  @include screen("tablet-l") {
+    height: 420px;
+    // grid-template-rows: [row1-start] auto [row1-end row2-start] 1fr [row2-end];
+    // grid-template-columns: [column1-start]auto [column1-end column2-start] 1fr [column2-end];
+  }
+  @include screen("phone") {
+    height: 350px;
+  }
+  //   img:first-child {
+  //     justify-self: end;
+  //     align-self: end;
+  //     @include screen("desktop") {
+  //       width: 170px;
+  //     }
+  //     @include screen("tablet-l") {
+  //       width: 140px;
+  //       margin-bottom: 4em;
+  //       margin-left: 1em;
+  //     }
+  //     @include screen("phone") {
+  //       width: 120px;
+  //       margin: unset;
+  //     }
+  //   }
+  //   img:last-child {
+  //     width: 140px;
+  //     padding-left: 8em;
+  //     box-sizing: unset;
+  //     @include screen("desktop") {
+  //       width: 120px;
+  //       padding-left: 7em;
+  //       padding-top: 1em;
+  //     }
+  //     @include screen("tablet-l") {
+  //       padding: unset;
+  //       justify-self: center;
+  //       align-self: end;
+  //       margin-left: 3em;
+  //     }
+  //     @include screen("phone") {
+  //       width: 90px;
+  //       margin: unset;
+  //       justify-self: end;
+  //       margin-bottom: 3em;
+  //     }
+  //   }
+}

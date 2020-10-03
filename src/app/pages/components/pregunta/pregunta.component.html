@@ -1,0 +1,63 @@
+<div class="hero">
+  <div class="grid">
+    <!-- <div class="leftbutton">
+            <div class="arrow-left"></div>
+            <p>Volver al menu</p>
+        </div> -->
+    <div class="status">
+      <p>{{ update + 1 }} / {{ preguntas.length }} preguntas</p>
+    </div>
+    <div class="card">
+      <img src="../../../../assets/multiplicar.svg" alt="" />
+      <p>Multiplicacion</p>
+    </div>
+    <div
+      class="pregunta"
+      *ngFor="let item of preguntas; let i = index"
+      [hidden]="!(i === update)"
+    >
+      <p>{{ item.m1 }} &nbsp; &nbsp; X &nbsp; &nbsp; {{ item.m2 }}</p>
+      <!-- {{i}}  -->
+    </div>
+    <img src="../../../../assets/OBJECTS.svg" alt="" />
+    <div class="containerRespuesta">
+      <p>Tu respuesta</p>
+      <input type="number" [(ngModel)]="miresp" />
+    </div>
+    <div class="rightbutton" (click)="next()">
+      <div class="arrow-right"></div>
+      <p>Siguiente</p>
+    </div>
+  </div>
+  
+  <div id="containerModal">
+    <div class="wraperModal">
+      <div class="headerModal">
+        <fa-icon [icon]="faHome" size="6x" class="icono" style="cursor:pointer;" (click)="goHome()"></fa-icon>
+      </div>
+      <div class="bodyModal">
+        <table class="table table-striped table-responsive-sm">
+            <thead class="table-info">
+              <tr>
+                <th scope="col">Numero</th>
+                <th scope="col">Respuesta</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Correcto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of respuestas; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.value }}</td>
+                <td>
+                  <div *ngIf="item.estado === true; else templateName"> <fa-icon [icon]="faCheckCircle" size="2x" style="color: rgb(7, 209, 0);"></fa-icon> </div>
+                </td>
+                <td [hidden]="!(item.estado===false)" style="color:red;">{{ [preguntas[i].resp] }}</td>
+                <ng-template #templateName> <fa-icon [icon]="faTimesCircle" size="2x" style="color: red;" ></fa-icon> </ng-template>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>

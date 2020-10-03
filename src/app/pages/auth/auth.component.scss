@@ -1,0 +1,29 @@
+@import '../../../styles/responsive-mixin.scss';
+.container-principal {
+    background: url(../../../assets/bgregister1920.svg);
+    position: relative;
+    overflow: hidden;
+    background-size: 115%;
+    background-position: 69% 42%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    padding: 4em;
+    box-sizing: border-box;
+    @include screen('desktop') {
+        background-position: 69% 25%;
+    }
+    @include screen('tablet-l') {
+        background: url(../../../assets/bgtablet.svg);
+        background-size: 150%;
+        background-position: 26% 135%;
+        background-repeat: no-repeat;
+    }
+    @include screen('phone') {
+        padding: unset;
+        background: url(../../../assets/bgphone.svg);
+        background-size: 150%;
+        background-position: 26% 135%;
+        background-repeat: no-repeat;
+    }
+}

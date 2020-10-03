@@ -1,0 +1,17 @@
+
+<div class="hero">
+  <h2 class="title">Examenes sobre {{cursoSeleccionado.name}} disponibles</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let item of examenesSeleccionados" [ngStyle]="{'background-color': item.color}" (click)="goExamen(item)"><img src="../../../../assets/multiplicar.svg" alt=""><p>{{item.name}}</p></div>
+      <!-- <div class="swiper-slide" *ngFor="let item of cursos" [ngStyle]="{'background-color': item.color}" (click)="goExamen(item)"><img src="../../../../assets/multiplicar.svg" alt=""><p>{{item.name}}</p></div> -->
+      <!-- <div class="swiper-slide"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div>
+      <div class="swiper-slide"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div>
+      <div class="swiper-slide"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div>
+      <div class="swiper-slide"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div>
+      <div class="swiper-slide blue"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div>
+      <div class="swiper-slide green"><img src="../../../../assets/multiplicar.svg" alt=""><p>Multiplicacion</p></div> -->
+    </div>
+  </div>
+  <img src="../../../../assets/boy2.svg" alt="boy2" class="boy" />
+</div>

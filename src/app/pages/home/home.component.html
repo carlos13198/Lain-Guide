@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../../assets/logo-lain.svg" alt="">Lain Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="../../../assets/lista.svg" alt="" (click)="myFunction()">
+    </button>
+
+        <div class="collapse navbar-collapse" id="lista-links">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Historial</a>
+                </li>
+                <li class="nav-item">
+                    <div class="circle nav-link">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="containerModal">
+    <div class="wraperModal">
+        <div class="headerModal">
+            <i class="fa fa-times" aria-hidden="true" (click)="myFunctionClose()"></i>
+        </div>
+        <div class="bodyModal">
+            <ul>
+                <li><a href="#">Guide</a></li>
+                <li><a href="#">Historial</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="hero-container">
+    <router-outlet></router-outlet>
+</div>

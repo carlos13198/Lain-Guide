@@ -1,0 +1,214 @@
+@import '../../../../styles/responsive-mixin.scss';
+* {
+    margin: 0;
+    font-family: 'Montserrat';
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.container-principal {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    @include screen('tablet-l') {
+        grid-template: auto auto/1fr;
+    }
+}
+
+.presentacion {
+    width: auto;
+    display: grid;
+    grid-template-rows: 1fr repeat(3, auto) 2fr;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    row-gap: 2em;
+    @include screen('tablet-l') {
+        row-gap: 1em;
+    }
+    @include screen('phone') {
+        grid-template-rows: 2fr repeat(3, auto) 1fr;
+    }
+    .logo {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1em;
+        grid-column: 2/span 1;
+        grid-row: 2/span 1;
+        align-self: center;
+        h1 {
+            font-size: 5em;
+            font-weight: 900;
+            margin: unset;
+            color: #4D4962;
+            align-self: center;
+            @include screen('desktop') {
+                font-size: 3em;
+            }
+            @include screen('phone') {
+                font-size: 2em;
+            }
+        }
+        img {
+            width: 120px;
+            @include screen('desktop') {
+                width: 100px;
+            }
+            @include screen('phone') {
+                width: 50px;
+            }
+        }
+    }
+    >p {
+        font-size: 2.2em;
+        grid-row: 3/span 1;
+        grid-column: 2/span 1;
+        font-weight: 500;
+        @include screen('desktop') {
+            font-size: 1.5em;
+        }
+        @include screen('phone') {
+            font-size: 1em;
+        }
+    }
+    .register-google {
+        width: 60%;
+        cursor: pointer;
+        height: 60px;
+        background-color: white;
+        border: #99DDC6 solid 2px;
+        border-radius: 1em;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        box-shadow: 0 0 15px #d1d1d1;
+        grid-row: 4/span 1;
+        grid-column: 2/span 1;
+        justify-self: center;
+        column-gap: 2em;
+        @include screen('desktop') {
+            column-gap: 1.5em;
+        }
+        @include screen('phone') {
+            column-gap: 1em;
+            width: 70%;
+            cursor: pointer;
+            height: 40px;
+        }
+        img {
+            margin-left: 1.5em;
+            width: 25px;
+            @include screen('desktop') {
+                margin-left: 1.5em;
+            }
+            @include screen('phone') {
+                margin-left: 1em;
+            }
+        }
+        p {
+            font-size: 1.2em;
+            font-weight: 500;
+            @include screen('desktop') {
+                font-size: 0.9em;
+            }
+            @include screen('phone') {
+                font-size: 0.7em;
+            }
+        }
+    }
+}
+
+.container-form {
+    display: grid;
+    .inputRegister {
+        width: 70%;
+        height: 50%;
+        background-color: white;
+        display: grid;
+        grid-template-rows: 1fr repeat(5, auto) 1fr;
+        border: #FF8E7B solid 1px;
+        border-radius: 2em;
+        align-self: center;
+        row-gap: 1em;
+        box-shadow: 0 0 15px #d1d1d1;
+        @include screen('desktop') {
+            min-width: 350px;
+        }
+        @include screen('tablet-l') {
+            align-self: start;
+            justify-self: center;
+            height: auto;
+            max-width: 460px;
+        }
+        @include screen('phone') {
+            min-width: unset;
+        }
+        input {
+            border-radius: 0.5em;
+            height: 40px;
+            width: 80%;
+            justify-self: center;
+            border: #707070 solid 1px;
+            padding-left: 1em;
+            box-sizing: border-box;
+            @include screen('desktop') {
+                height: 35px;
+            }
+            @include screen('phone') {
+                height: 25px;
+                font-size: 0.7em;
+            }
+        }
+        input::placeholder {
+            color: black;
+            font-weight: 500;
+        }
+        .nombre {
+            grid-row: 2/3;
+        }
+        .email {
+            grid-row: 3/4;
+        }
+        .password {
+            grid-row: 4/5;
+        }
+        .password2 {
+            grid-row: 5/6;
+        }
+        button {
+            background-color: #FF8E7B;
+            border: #707070 solid 1px;
+            margin-top: 1em;
+            justify-self: center;
+            width: 50%;
+            height: 60px;
+            box-shadow: 0 0 15px #d1d1d1;
+            grid-row: 6/7;
+            border-radius: 1em;
+            cursor: pointer;
+            box-sizing: border-box;
+            @include screen('desktop') {
+                height: 40px;
+            }
+            @include screen('tablet-l') {
+                margin-top: 0;
+            }
+            @include screen('phone') {
+                height: 30px;
+            }
+            p {
+                margin: unset;
+                text-align: center;
+                color: white;
+                font-size: 1.8em;
+                font-weight: 500;
+                @include screen('desktop') {
+                    font-size: 1.4em;
+                }
+                @include screen('phone') {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
